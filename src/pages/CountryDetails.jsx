@@ -15,7 +15,7 @@ const CountryDetails = () => {
   return (
     <div className="container mt-5">
       <div className="row">
-        {/* Navigation Icon */}
+      
         <div className="position-absolute top-0 start-0 p-3">
           <Link to="/" className="text-decoration-none">
             <i className="bi bi-house-door-fill text-primary" style={{ fontSize: '2rem' }}></i>
@@ -37,6 +37,7 @@ const CountryDetails = () => {
 
         <div className="col-md-8">
           <div className="card shadow-sm p-4">
+             {/* Displaying various country details */}
             <h2 className="text-center text-primary mb-4">Country Details</h2>
             <p><strong className="text-secondary">Common Name:</strong> {country.name.common}</p>
             <p><strong className="text-secondary">Country Code (CCA3):</strong> {country.cca3}</p>
@@ -45,6 +46,8 @@ const CountryDetails = () => {
             <p><strong className="text-secondary">Population:</strong> {country.population.toLocaleString()}</p>
             <p><strong className="text-secondary">Languages:</strong> {Object.values(country.languages || {}).join(', ')}</p>
             <p><strong className="text-secondary">Timezones:</strong> {country.timezones.join(', ')}</p>
+
+             {/* Google Maps button to view the country's location */}
             <div className="text-center mt-4">
               <a
                 href={`https://www.google.com/maps?q=${country.latlng[0]},${country.latlng[1]}`}
